@@ -1,0 +1,12 @@
+<!-- Define your plugins -->
+<plugin>
+    <name>Org Tree Plugin</name>
+    <version>1.0</version>
+    <author>Tim</author>
+    <homePage>http://www.baosight.com</homePage>
+    <email>derek@jivesoftware.com</email>
+    <description>Org Tree.</description>
+    <class>com.jivesoftware.spark.orgtree.OrgTreePlugin</class>
+    <minSparkVersion>2.6.0</minSparkVersion>
+</plugin>
+
