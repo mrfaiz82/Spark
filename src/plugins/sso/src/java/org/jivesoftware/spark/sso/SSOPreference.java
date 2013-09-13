@@ -79,6 +79,9 @@ public class SSOPreference implements Preference{
 		//get value via the _prefPanel
 		_prefPanel.setRemoteUrl(_props.getRemoteUrl());
 		_prefPanel.setRemoteName(_props.getRemoteName());
+		_prefPanel.setUsername(_props.getUserName());
+		_prefPanel.setPassword(_props.getCodedPwd());
+		_prefPanel.setSSOEnable(_props.getEnable());
 	}
 
 	@Override
@@ -86,6 +89,9 @@ public class SSOPreference implements Preference{
 		//save value in the _prefPanel
 		_props.setRemoteUrl(_prefPanel.getRemoteUrl());
 		_props.setRemoteName(_prefPanel.getRemoteName());
+		_props.setUserName(_prefPanel.getUsername());
+		_props.setCodedPwd(_prefPanel.getPassword());
+		_props.setEnable(_prefPanel.getSSOEnable());
 		_props.save();
 	}
 

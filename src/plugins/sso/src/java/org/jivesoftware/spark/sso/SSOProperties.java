@@ -13,8 +13,11 @@ public class SSOProperties {
     private Properties props;
     private File configFile;
 
-    public static final String REMOTEURL = "remoteUrl";
-    public static final String REMOTENAME = "remoteName";
+    private static final String REMOTEURL = "remoteUrl";
+    private static final String REMOTENAME = "remoteName";
+    private static final String REMOTEUSER = "username";
+    private static final String REMOTEPASSWORD = "password";
+    private static final String ENABLE = "enable";
     
     private static final Object LOCK = new Object();  
     
@@ -74,5 +77,44 @@ public class SSOProperties {
     {
     	props.setProperty(REMOTENAME, name);
     }
-
+    
+    public String getCodedPwd()
+    {
+    	return props.getProperty(REMOTEPASSWORD, "");
+    }
+    
+    public void setCodedPwd(String plainPwd)
+    {
+    	props.setProperty(REMOTEPASSWORD, PasswordMD5.md5(plainPwd));
+    }
+    
+    public String getUserName()
+    {
+    	return props.getProperty(REMOTEUSER,"");
+    }
+    
+    public void setUserName(String username)
+    {
+    	props.setProperty(REMOTEUSER,username);
+    }
+    
+    public void setEnable(boolean enable)
+    {
+    	if(enable){
+    	props.setProperty(ENABLE,"true");
+    	}else{
+    		props.setProperty(ENABLE, "false");
+    	}
+    }
+    
+    public boolean getEnable()
+    {
+    	String enable= props.getProperty(ENABLE,"false");
+    	if("true".equals(enable))
+    	{
+    		return true;
+    	}else{
+    		return false;
+    	}
+    }
 }

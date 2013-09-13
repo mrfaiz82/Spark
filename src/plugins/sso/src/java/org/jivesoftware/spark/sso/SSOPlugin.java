@@ -11,11 +11,14 @@ import org.jivesoftware.spark.plugin.Plugin;
  */
 public class SSOPlugin implements Plugin{
 
+	SSOPreference pref = null;
 	@Override
 	public void initialize() {
 		//draw panel on login advanced panel
-		SSOPreference pref = new SSOPreference();
+		pref = new SSOPreference();
+		SSOMessageListener ssoListener = new SSOMessageListener();
 		SparkManager.getPreferenceManager().addPreference(pref);
+		SparkManager.getChatManager().addChatRoomListener(ssoListener);
 	}
 
 	@Override
@@ -32,7 +35,9 @@ public class SSOPlugin implements Plugin{
 
 	@Override
 	public void uninstall() {
-		
+		if(pref != null){
+			SparkManager.getPreferenceManager().removePreference(pref);
+		}
 	}
 
 	
