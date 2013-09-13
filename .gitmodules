@@ -1,0 +1,6 @@
+[submodule "contactg"]
+	path = src/plugins/contactg
+	url = https://github.com/kk580kk/ContactG.git
+[submodule "sso"]
+	path = src/plugins/sso
+	url = https://github.com/kk580kk/sso.git
