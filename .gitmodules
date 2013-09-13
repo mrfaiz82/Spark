@@ -4,3 +4,9 @@
 [submodule "sso"]
 	path = src/plugins/sso
 	url = https://github.com/kk580kk/sso.git
+	[submodule "sso"]
+    	path = sso
+    	url = https://github.com/kk580kk/sso.git
+[submodule "src/plugins/sso"]
+	path = src/plugins/sso
+	url = https://github.com/kk580kk/sso.git
