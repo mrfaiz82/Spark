@@ -19,6 +19,7 @@
  */
 package org.jivesoftware.launcher;
 
+import javax.swing.*;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -52,6 +53,15 @@ public class Startup {
      * @param args the arguments passed into this initial instance of Spark.
      */
     private void start(String[] args) {
+        try
+        {
+            UIManager.put("RootPane.setupButtonVisible", false);
+            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
         // Setup the classpath using JiveClassLoader
         try {
             // Load up the bootstrap container

@@ -1,7 +1,7 @@
 :run
 if "%1" == "-debug" goto debug
 if "%1" == "-noconsole" goto noconsole
-java -Dappdir=.. -cp ../lib/jdom.jar;../lib/log4j.jar;../lib/lti-civil.jar;../lib/fmj.jar;../lib/startup.jar;../lib/windows/jdic.jar;../resources;../lib/windows; -Djava.library.path="../lib/windows" org.jivesoftware.launcher.Startup
+java -Dappdir=.. -cp ../lib/beautyeye_lnf.jar;../lib/JTattoo.jar;../lib/jdom.jar;../lib/log4j.jar;../lib/lti-civil.jar;../lib/fmj.jar;../lib/startup.jar;../lib/windows/jdic.jar;../resources;../lib/windows; -Djava.library.path="../lib/windows" org.jivesoftware.launcher.Startup
 goto end
 
 :noconsole
